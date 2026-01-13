@@ -1,4 +1,5 @@
 import java.util.Arrays;
+import java.util.Scanner;
 
 // Arrays Practice
 
@@ -39,6 +40,10 @@ public class JavaPractice {
         question17();
         printing();
         question18();
+        printing();
+        question19();
+        printing();
+        TwoDArrays();
     }
 
     public static void printing() {
@@ -330,5 +335,49 @@ public class JavaPractice {
         }
 
     }
+
+    // Rotate array left by 1
+
+    public static void question19() {
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int first = arr[0];
+
+
+        for (int i = 0; i < arr.length - 1; i++) {
+            arr[i] = arr[i+1];
+        }
+
+        arr[arr.length - 1] = first;
+        System.out.println(Arrays.toString(arr));
+    }
+
+
+
+
+    // 2D Arrays
+    public static void TwoDArrays() {
+        Scanner sc = new Scanner(System.in);
+
+        int rows = sc.nextInt();
+        int cols = sc.nextInt();
+
+        int[][] matrix = new int[rows][cols];
+
+        for(int i = 0; i < rows; i++){
+            for(int j =0; j < cols; j++){
+                matrix[i][j] = sc.nextInt();
+            }
+        }
+
+        for(int i = 0; i < rows; i++){
+            for(int j =0; j < cols; j++){
+                System.out.print(matrix[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+
+    
+
 
 }
